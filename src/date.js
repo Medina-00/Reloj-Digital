@@ -12,7 +12,7 @@ setInterval(() => {
     "SEPTIEMBRE",
     "OCTUBRE",
     "NOVIEMBRE",
-    "DICIEMBRE"
+    "DICIEMBRE",
   ];
 
   const dias = [
@@ -22,22 +22,22 @@ setInterval(() => {
     "JUEVES",
     "VIERNES",
     "SÁBADO",
-    "DOMINGO"
+    "DOMINGO",
   ];
-  let fechaActual = document.querySelector('.fecha')
+  let fechaActual = document.querySelector(".fecha");
   let horaActual = document.querySelector(".hora");
-  horaActual.innerHTML = `HORA ACTUAL : ${fecha.getHours()} : ${fecha.getMinutes()} : ${fecha.getSeconds()}`;
-  fechaActual.innerHTML = `FCEHA ACTUAL : ${dias[fecha.getDay()]} - ${fecha.getDate()}  / ${meses[fecha.getMonth()]} / ${fecha.getFullYear()}`
+  let segundo = fecha.getSeconds().toString();
+  if (segundo.length < 2) {
+    segundo = `0${segundo}`;
+  }
+  horaActual.innerHTML = `HORA ACTUAL : ${fecha.getHours()} : ${fecha.getMinutes()} : ${segundo}`;
+  fechaActual.innerHTML = `FCEHA ACTUAL : ${
+    dias[fecha.getDay()]
+  } - ${fecha.getDate()}  / ${
+    meses[fecha.getMonth()]
+  } / ${fecha.getFullYear()}`;
 
-
-  let contendor = document.querySelector('.contenedor__content');
-    contendor.classList.toggle('outlined');
-    contendor.classList.toggle('cambiar_fondo')
+  let contendor = document.querySelector(".contenedor__content");
+  contendor.classList.toggle("outlined");
+  contendor.classList.toggle("cambiar_fondo");
 }, 1000);
-
-
-
-console.log(fecha);
-console.log(mes);
-console.log(dia);
-console.log(year);

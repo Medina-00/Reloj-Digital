@@ -36,3 +36,20 @@ body{
 .contenedor__content.outlined {
     outline: 5px solid white;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .contenedor__content {
+        padding: 10px; 
+        border-radius: 20px; 
+        font-size: auto;
+    }
+
+    .hora{
+        font-size: 25px;
+    }
+
+    .fecha{
+        font-size: 12px;
+    }
+}
